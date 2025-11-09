@@ -6,9 +6,18 @@ import { useTheme } from '../context/ThemeContext'
 export default function HeroSection({ title, subtitle, bg, cta }) {
   const { theme } = useTheme()
 
+  // ✅ Define gradients once — avoids flicker/glitch when switching themes
+  const gradientText =
+    theme === 'dark'
+      ? 'bg-gradient-to-r from-yellow-400 to-yellow-300'
+      : 'bg-gradient-to-r from-amber-500 to-amber-300'
+
+  const textColor =
+    theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+
   return (
     <section
-      className={`relative py-16 sm:py-20 text-center overflow-hidden transition-all duration-500 ${
+      className={`relative py-10 sm:py-14 text-center overflow-hidden transition-colors duration-500 ${
         theme === 'dark' ? 'bg-dark' : 'bg-primary-50'
       }`}
       style={{
@@ -17,7 +26,6 @@ export default function HeroSection({ title, subtitle, bg, cta }) {
         backgroundPosition: 'center',
       }}
     >
-      {/* Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,40 +33,24 @@ export default function HeroSection({ title, subtitle, bg, cta }) {
         className="relative z-10 px-4 max-w-3xl mx-auto"
       >
         <h1
-          className="font-display font-extrabold mb-3 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-          style={{
-            background: theme === 'dark'
-              ? 'linear-gradient(90deg, #facc15, #eab308)'
-              : 'linear-gradient(90deg, #fbbf24, #fcd34d)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
+          className={`font-display font-extrabold mb-3 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight bg-clip-text text-transparent ${gradientText}`}
         >
           {title}
         </h1>
 
-        <p
-          className={`text-base sm:text-lg md:text-xl mb-5 sm:mb-6 ${
-            theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
-          }`}
-        >
+        <p className={`text-base sm:text-lg md:text-xl mb-5 sm:mb-6 ${textColor}`}>
           {subtitle}
         </p>
 
-        {/* Optional CTA */}
         {cta && (
           <motion.a
             href={cta.link}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="relative inline-block px-8 py-3 font-semibold rounded-lg text-black overflow-hidden"
-            style={{
-              background: 'linear-gradient(90deg, #facc15, #eab308)',
-              boxShadow: '0 0 25px rgba(250,204,21,0.5)',
-            }}
+            className="inline-block px-6 py-2.5 sm:px-8 sm:py-3 font-semibold rounded-lg text-black bg-gradient-to-r from-yellow-400 to-yellow-300 shadow-lg shadow-yellow-400/40 hover:shadow-yellow-400/60 transition-all"
           >
-            <span className="relative z-10">{cta.label}</span>
+            {cta.label}
           </motion.a>
         )}
       </motion.div>
