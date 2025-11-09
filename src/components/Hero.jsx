@@ -36,7 +36,7 @@ export default function Hero() {
       frame++;
       setCounters({
         years: Math.min(10, (frame / duration) * 10),
-        projects: Math.min(120, (frame / duration) * 500),
+        projects: Math.min(500, (frame / duration) * 500),
         clients: Math.min(50, (frame / duration) * 50),
       });
       if (frame < duration) requestAnimationFrame(animateCounters);

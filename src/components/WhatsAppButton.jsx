@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function WhatsAppButton({phone = "+254700000000"}) {
+export default function WhatsAppButton({phone = "+254706872269"}) {
   const url = `https://wa.me/${phone.replace(/\D/g,'')}`;
   return (
     <a

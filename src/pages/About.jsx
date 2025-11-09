@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import HeroSection from "../components/HeroSection";
 import WhyUs from "../components/WhyUs";
 import Testimonials from "../components/Testimonials";
@@ -105,7 +106,22 @@ export default function About() {
       </section>
 
       {/* Testimonials */}
-      <Testimonials />
+      <SectionFade>
+        <Testimonials />
+      </SectionFade>
     </div>
   );
 }
+
+// ====== Shared Section Wrapper ======
+const SectionFade = ({ children }) => (
+  <motion.section
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.7 }}
+    className="py-10 sm:py-14 lg:py-16 container mx-auto px-4 sm:px-6 lg:px-12"
+  >
+    {children}
+  </motion.section>
+);

@@ -46,15 +46,6 @@ export default function Home() {
         ? "bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white"
         : "bg-gradient-to-b from-white via-gray-100 to-gray-200 text-slate-900"}`}
     >
-      {/* ===== THEME TOGGLE ===== */}
-      <button
-        onClick={toggleTheme}
-        className="fixed bottom-6 right-6 z-50 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-full p-3 shadow-lg hover:scale-110 transition"
-        aria-label="Toggle Theme"
-      >
-        {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
-
       {/* ===== HERO ===== */}
       <Hero />
 
@@ -82,7 +73,7 @@ export default function Home() {
       </SectionFade>
 
       {/* ===== FLOATING WHATSAPP ===== */}
-      <WhatsAppButton phone="+254700000000" />
+      <WhatsAppButton phone="+254706872269" />
     </main>
   );
 }
@@ -99,5 +90,4 @@ const SectionFade = ({ children }) => (
     {children}
   </motion.section>
 );
-
 

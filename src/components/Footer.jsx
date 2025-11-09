@@ -142,7 +142,7 @@ export default function Footer() {
         <div className="rounded-2xl overflow-hidden shadow-lg h-60 sm:h-72 border border-gray-200 dark:border-slate-800">
           <iframe
             title="Kenya Containers Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.863073909676!2d36.84523647496414!3d-1.317947598656416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f115d9c4dbb0b%3A0xd8efadf7e46df1a8!2sGK%20Building%2C%20Lunga%20Lunga%20Rd!5e0!3m2!1sen!2ske!4v1691234567890!5m2!1sen!2ske"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63821.24002309879!2d36.83047669485311!3d-1.276930319980503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f134bdfcce719%3A0x45c908493b40cabf!2sKenya%20Containers!5e0!3m2!1sen!2ske!4v1762726423601!5m2!1sen!2ske"
             width="100%"
             height="100%"
             allowFullScreen
